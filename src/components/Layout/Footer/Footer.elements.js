@@ -53,13 +53,14 @@ export const BottomLink = styled((props) => <Link {...props} />)`
     text-decoration: none;
     color: #fff;
     transition: all .3s;
+    font-size: .8rem;
     &:hover {
         color: #e91e7a;
     }
 
     @media only screen and (max-width: 56em) {
     & {
-      font-size: .9rem;
+      font-size: .7rem;
     }
   }
 `
@@ -81,10 +82,6 @@ export const ForFontAwesomeLink = styled((props) => <Link {...props} />)`
     }
   }
 `
-export const StyledFontAwesomeIcon = styled((props) => <FontAwesomeIcon {...props} />)`
-    z-index: 2;
-    position: relative;
-`
 export const StyledFontAwesomeCircle = styled((props) => <FontAwesomeIcon {...props} />)`
     z-index: 1;
     position: absolute;
@@ -92,4 +89,25 @@ export const StyledFontAwesomeCircle = styled((props) => <FontAwesomeIcon {...pr
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 3.5rem;
+    transition: all .4s ease-in-out;
+
+    @media only screen and (max-width: 56em) {
+    & {
+      font-size: 2.4rem;
+    }
+  }
+`
+
+export const StyledFontAwesomeIcon = styled((props) => <FontAwesomeIcon {...props} />)`
+    z-index: 2;
+    position: relative;
+    transition: all .4s ease-in-out;
+
+    &:hover + ${StyledFontAwesomeCircle} {
+        transform: translate(-50%,-50%) scale(1.3);
+    }
+
+    &:hover {
+        transform: scale(1.3);
+    }
 `

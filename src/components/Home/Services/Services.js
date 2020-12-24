@@ -24,42 +24,42 @@ export default function Services({
       DesktopOne: file(relativePath: { eq: "Computer.png" }) {
         childImageSharp {
           fixed(width: 150, height: 150) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       DesktopTwo: file(relativePath: { eq: "Pencil.png" }) {
         childImageSharp {
           fixed(width: 150, height: 150) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       DesktopThree: file(relativePath: { eq: "Phone.png" }) {
         childImageSharp {
           fixed(width: 150, height: 150) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       MobileOne: file(relativePath: { eq: "Computer.png" }) {
         childImageSharp {
           fixed(width: 100, height: 100) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       MobileTwo: file(relativePath: { eq: "Pencil.png" }) {
         childImageSharp {
           fixed(width: 100, height: 100) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       MobileThree: file(relativePath: { eq: "Phone.png" }) {
         childImageSharp {
           fixed(width: 100, height: 100) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }

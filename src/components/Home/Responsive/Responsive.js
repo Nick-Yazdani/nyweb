@@ -16,28 +16,28 @@ export default function Responsive({ heading, paragraph }) {
       DesktopOne: file(relativePath: { eq: "mac.png" }) {
         childImageSharp {
           fixed(width: 300, height: 300) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }
       DesktopTwo: file(relativePath: { eq: "phone_two.png" }) {
         childImageSharp {
           fixed(width: 300, height: 300) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }
       MobileOne: file(relativePath: { eq: "mac.png" }) {
         childImageSharp {
           fixed(width: 220, height: 220) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }
       MobileTwo: file(relativePath: { eq: "phone_two.png" }) {
         childImageSharp {
           fixed(width: 220, height: 220) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }
