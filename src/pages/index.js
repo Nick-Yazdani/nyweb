@@ -9,6 +9,8 @@ import sliderFour from '../images/placeholder_four.png'
 import sliderFive from '../images/placeholder_five.png'
 import sliderSix from '../images/placeholder_six.png'
 
+import Intro from '../videos/intro.mp4';
+
 const sliders = [
   {
     image: sliderOne
@@ -35,7 +37,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <main>
-      <Cover heading={`development you can depend on`} btnText={`read more`} />
+      <Cover heading={`development you can depend on`} btnText={`read more`} video={Intro}/>
       <About
         paragraphOne={`We're a team of highly skilled developers who have what it takes to build you the perfect website or app.`}
         paragraphTwo={`Our innovative design team are digital artists, specialising in unique and stunning designs and templates. Our experienced developers have all the tools necessary to engineer top-of-the-line websites in no time at all.`}

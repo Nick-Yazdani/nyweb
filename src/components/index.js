@@ -5,6 +5,8 @@ export { default as Services } from './Home/Services/Services'
 export { default as Responsive } from './Home/Responsive/Responsive'
 export { default as Work } from './Home/Work/Work'
 export { default as Contact } from './Home/Contact/Contact'
+export { default as ContactTwo } from './Contact/Contact'
+
 
 
 
