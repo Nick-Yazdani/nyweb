@@ -8,6 +8,7 @@ import {
   Button,
   Row,
   Col,
+  Form
 } from './Contact.elements';
 
 export default function Contact({ title, btnText }) {
@@ -16,6 +17,7 @@ export default function Contact({ title, btnText }) {
       <Row>
         <Title>{title}</Title>
       </Row>
+      <Form>
       <Row>
         <NameInput placeholder="Name" />
       </Row>
@@ -33,6 +35,7 @@ export default function Contact({ title, btnText }) {
       <Row>
         <Button>{btnText}</Button>
       </Row>
+      </Form>
     </Container>
   );
 }

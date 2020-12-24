@@ -2,10 +2,26 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   padding: 2rem 5rem;
+
+  @media only screen and (max-width: 26em) {
+    & {
+      padding: 2rem 1rem;
+    }
+  }
 `;
+
+export const Form = styled.form`
+`
+
 export const Title = styled.h2`
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
+
+    @media only screen and (max-width: 37.5em) {
+    & {
+      text-align: center;
+    }
+  }  
 `;
 export const NameInput = styled.input`
   width: 100%;
@@ -13,6 +29,7 @@ export const NameInput = styled.input`
   background-color: #eeeeee;
   border: none;
   outline: none;
+  margin-bottom: 1.5rem;
 
   font-family: 'Montserrat', sans-serif;
 
@@ -51,7 +68,7 @@ export const Button = styled.button`
   background-color: #320f51;
   display: inline-block;
   padding: 1.2rem 1.8rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
@@ -80,6 +97,13 @@ export const Button = styled.button`
       opacity: 0;
     }
   }
+
+  @media only screen and (max-width: 37.5em) {
+    & {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
 `;
 
 export const Row = styled.div`
@@ -90,11 +114,25 @@ export const Row = styled.div`
   &:first-child {
     margin-bottom: 0.5rem;
   }
+
+  @media only screen and (max-width: 37.5em) {
+    & {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const Col = styled.div`
   width: 50%;
   &:not(:last-child) {
     margin-right: 2rem;
+  }
+  @media only screen and (max-width: 37.5em) {
+    & {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 `;

@@ -35,12 +35,23 @@ export const MainStyledLink = styled((props) => <Link {...props} />)`
 export const Row = styled.div`
     padding: 5rem;
     display: flex;
+    @media only screen and (max-width: 30em) {
+    & {
+      flex-direction: column;
+    }
+  }
 `
 
 export const List = styled.ul`
     display: flex;
     list-style: none;
     justify-content: center;
+
+    @media only screen and (max-width: 30em) {
+    & {
+      display: none;
+    }
+  }
 `
 
 export const ListItem = styled.li`
@@ -68,6 +79,14 @@ export const Col = styled.div`
     &:last-child {
         margin-left: auto;
     }
+    @media only screen and (max-width: 30em) {
+    & {
+        &:last-child {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    }
+  }
 `
 
 export const ForFontAwesomeLink = styled((props) => <Link {...props} />)`
