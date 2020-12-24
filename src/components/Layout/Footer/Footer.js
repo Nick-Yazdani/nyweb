@@ -6,6 +6,8 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+
 import {
   ForFontAwesomeLink,
   Container,
@@ -17,6 +19,7 @@ import {
   ListItem,
   Col,
   StyledFontAwesomeIcon,
+  StyledFontAwesomeCircle
 } from './Footer.elements';
 
 export default function Footer() {
@@ -34,12 +37,20 @@ export default function Footer() {
                 color="#3b5998"
                 size={`4x`}
               />
+              <StyledFontAwesomeCircle
+                icon={faCircle}
+                color="#fff"
+              />
             </ForFontAwesomeLink>
             <ForFontAwesomeLink to="#">
               <StyledFontAwesomeIcon
                 icon={faTwitterSquare}
                 color="#00aced"
                 size={`4x`}
+              />
+              <StyledFontAwesomeCircle
+                icon={faCircle}
+                color="#fff"
               />
             </ForFontAwesomeLink>
             <ForFontAwesomeLink to="#">
@@ -48,12 +59,20 @@ export default function Footer() {
                 color="#ea2c59"
                 size={`4x`}
               />
+              <StyledFontAwesomeCircle
+                icon={faCircle}
+                color="#fff"
+              />
             </ForFontAwesomeLink>
             <ForFontAwesomeLink to="#">
               <StyledFontAwesomeIcon
                 icon={faLinkedin}
                 color="#007bb6"
                 size={`4x`}
+              />
+               <StyledFontAwesomeCircle
+                icon={faCircle}
+                color="#fff"
               />
             </ForFontAwesomeLink>
         </Col>

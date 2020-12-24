@@ -72,35 +72,24 @@ export const Col = styled.div`
 export const ForFontAwesomeLink = styled((props) => <Link {...props} />)`
     display: inline-block;
     position: relative;
-    z-index: 2;
-    &::after {
-        position: absolute;
-        width: 50px;
-        height: 54px;
-        content: "";
-        background-color: #fff;
-        display: block;
-        z-index: 10;
-        color: red;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-    }
     &:not(:last-child) {
         margin-right: 1rem;
     }
     @media only screen and (max-width: 56em) {
     & {
       font-size: .7rem;
-
-      &::after {
-        width: 35px;
-        height: 35px;
-      }
     }
   }
 `
 export const StyledFontAwesomeIcon = styled((props) => <FontAwesomeIcon {...props} />)`
     z-index: 2;
+    position: relative;
+`
+export const StyledFontAwesomeCircle = styled((props) => <FontAwesomeIcon {...props} />)`
+    z-index: 1;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3.5rem;
 `
