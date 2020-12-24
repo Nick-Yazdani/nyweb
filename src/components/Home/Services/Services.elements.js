@@ -37,6 +37,13 @@ export const Paragraph = styled.p`
     line-height: 1.5rem;
     margin-bottom: 3rem;
 
+    @media only screen and (max-width: 42em) {
+    & {
+        width: 100%;
+        padding: 0 1rem;
+    }
+  }
+
     @media only screen and (max-width: 56em) {
     & {
       font-size: .7rem;
@@ -51,12 +58,23 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 width: 33%;
+@media only screen and (max-width: 42em) {
+    & {
+        width: 100%;
+    }
+  }
 `
 
 export const Row = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+
+    @media only screen and (max-width: 42em) {
+    & {
+        flex-direction: column;
+    }
+  }
  
 `
 export const StyledImage = styled((props) => <Img {...props} />)`

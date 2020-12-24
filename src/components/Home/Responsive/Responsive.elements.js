@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 export const Container = styled.section`
+    @media only screen and (max-width: 42em) {
+    & {
+        display: flex;
+        flex-direction: column;
+    }
+  }
 `
 
 export const Title = styled.h2`
@@ -27,21 +33,25 @@ export const Paragraph = styled.p`
     @media only screen and (max-width: 56em) {
     & {
       font-size: .7rem;
+      width: 100%;
     }
   }
 `
 
 export const StyledImage = styled((props) => <Img {...props} />)`
-    @media only screen and (max-width: 56em) {
-    & {
-      width: 20%;
-    }
-  }
+
 `
 
 export const Row = styled.div`
     display: flex;
     justify-content: center;
+
+    @media only screen and (max-width: 42em) {
+    & {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
 `
 
 export const ColOne = styled.div`
@@ -49,6 +59,13 @@ export const ColOne = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-right: 3rem;
+    margin: 0;
+
+    @media only screen and (max-width: 42em) {
+    & {
+        justify-content: center;
+    }
+  }
 `
 
 export const ColTwo = styled.div`
@@ -56,4 +73,11 @@ export const ColTwo = styled.div`
     display: flex;
     justify-content: flex-start;
     margin-left: 3rem;
+
+       @media only screen and (max-width: 42em) {
+    & {
+        justify-content: center;
+        margin: 0;
+    }
+       }
 `

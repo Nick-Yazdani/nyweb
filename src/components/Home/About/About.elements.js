@@ -6,17 +6,48 @@ export const Container = styled.section`
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: 40em) {
+    & {
+        justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 32.5em) {
+    & {
+        flex-direction: column;
+        text-align: center;
+    }
+  }
 `;
 export const ColOne = styled.div`
   flex-basis: 33%;
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 40em) {
+    & {
+        padding: 2rem;
+    }
+  }
 `;
 export const ColTwo = styled.div`
-  flex-basis: 42%;
+  flex-basis: 67%;
+
+  @media only screen and (max-width: 40em) {
+    & {
+        padding: 2rem;
+    }
+  }
 `;
 export const ColThree = styled.div`
   flex-basis: 25%;
+
+  @media only screen and (max-width: 40em) {
+    & {
+        display: none;
+    }
+  }
 `;
 export const Title = styled.h2`
   font-size: 4.5rem;
@@ -46,9 +77,9 @@ export const Paragraph = styled.p`
 
   @media only screen and (max-width: 56em) {
     & {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
-  }  
+  }
 `;
 
 export const CircleOne = styled.div`
@@ -61,6 +92,12 @@ export const CircleOne = styled.div`
   top: 7%;
   right: 0;
   transform: scale(2.3);
+
+  @media only screen and (max-width: 40em) {
+    & {
+        display: none;
+    }
+  }
 
   @media only screen and (max-width: 56em) {
     & {
@@ -87,6 +124,11 @@ export const CircleTwo = styled.div`
       transform: translate(-5%, -55%) scale(1.1);
     }
   }
+  @media only screen and (max-width: 40em) {
+    & {
+        display: none;
+    }
+  }
 `;
 
 export const CircleThree = styled.div`
@@ -104,6 +146,11 @@ export const CircleThree = styled.div`
     & {
       right: -10%;
       transform: scale(1.4);
+    }
+  }
+  @media only screen and (max-width: 40em) {
+    & {
+        display: none;
     }
   }
 `;
