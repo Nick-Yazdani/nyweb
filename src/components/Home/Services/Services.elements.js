@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 export const Container = styled.section`
     background-color: #666666;  
-    color: #fff;
+    color: #fff;    
 `
 export const Title = styled.h2`
     text-transform: uppercase;

@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section.attrs((props) => ({
+  bgColor: props.bgColor || `#fff`,
+}))`
   padding: 2rem 5rem;
+  background-color: ${(props) => props.bgColor};
 
   @media only screen and (max-width: 26em) {
     & {
@@ -10,18 +13,20 @@ export const Container = styled.section`
   }
 `;
 
-export const Form = styled.form`
-`
+export const Form = styled.form``;
 
-export const Title = styled.h2`
+export const Title = styled.h2.attrs((props) => ({
+  titleColor: props.titleColor || `#000`,
+}))`
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
+  color: ${(props) => props.titleColor};
 
-    @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     & {
       text-align: center;
     }
-  }  
+  }
 `;
 export const NameInput = styled.input`
   width: 100%;
@@ -51,7 +56,7 @@ export const EmailPhone = styled.input`
 `;
 export const Message = styled.textarea`
   width: 100%;
-  height: 24vh;
+  height: 32vh;
   resize: none;
   padding: 0.8rem;
   background-color: #eeeeee;

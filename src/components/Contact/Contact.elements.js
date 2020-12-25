@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section.attrs((props) => ({
+    bgColor: props.bgColor || `#fff`
+}))`
   padding: 0 4rem;
   padding-top: 10rem;
   padding-bottom: 4rem;
+  background-color: ${props => props.bgColor};
 `;
 
-export const Form = styled.form`
-`
+export const Form = styled.form``;
 
 export const Title = styled.h1`
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
   text-align: center;
   width: 100%;
-  font-size: 4rem; 
+  font-size: 3.5rem;
   text-transform: uppercase;
   margin-bottom: 4rem;
 `;
@@ -46,7 +48,7 @@ export const EmailPhone = styled.input`
 `;
 export const Message = styled.textarea`
   width: 100%;
-  height: 24vh;
+  height: 30vh;
   resize: none;
   padding: 0.8rem;
   background-color: #eeeeee;
@@ -131,8 +133,19 @@ export const Col = styled.div`
     }
   }
 `;
-export const BudgetListContainer = styled.div`
-`
+export const BudgetContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const BudgetListItem = styled.span`
-`
+export const BudgetItemTitle = styled.span`
+  margin-bottom: 1rem;
+`;
+
+export const BudgetItem = styled.span`
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const BudgetItemSelection = styled.input``;

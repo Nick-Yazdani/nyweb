@@ -84,8 +84,8 @@ export const NavigationLink = styled((props) => <Link {...props} />)`
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  font-size: 0.7rem;
-  transition: all 0.3s;
+  font-size: .8rem;
+  transition: all .3s;
 
   &.active {
     color: #e91e7a;

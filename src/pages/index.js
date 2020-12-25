@@ -32,16 +32,28 @@ const sliders = [
   }
 ]
 
+const aboutWords = [
+  {
+    word: 'who',
+  },
+  {
+    word: 'are',
+  },
+  {
+    word: 'we?',
+  }
+]
 
 export default function IndexPage() {
   return (
     <Layout>
       <main>
-      <Cover heading={`development you can depend on`} btnText={`read more`} video={Intro}/>
+      <Cover heading={`development you can depend on`} btnText={`read more`} video={Intro} path={`/about`}/>
       <About
         paragraphOne={`We're a team of highly skilled developers who have what it takes to build you the perfect website or app.`}
         paragraphTwo={`Our innovative design team are digital artists, specialising in unique and stunning designs and templates. Our experienced developers have all the tools necessary to engineer top-of-the-line websites in no time at all.`}
         paragraphThree={`We listen to our clients, and we know they like to browse tech of all shapes and sizes. All our websites are built completely responsive and market-ready, with platforms that speak directly to inexperience and intuitive users alike.`}
+        words={aboutWords}
       />
       <Services
         heading={`our services`}

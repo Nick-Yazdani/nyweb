@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import React from 'react'
+import Img from 'gatsby-image'
 
 export const Container = styled.section`
   display: flex;
@@ -6,6 +8,7 @@ export const Container = styled.section`
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
+  justify-content: center;
 
   @media only screen and (max-width: 40em) {
     & {
@@ -21,10 +24,9 @@ export const Container = styled.section`
   }
 `;
 export const ColOne = styled.div`
-  flex-basis: 33%;
   display: flex;
-  justify-content: center;
-
+  justify-content: flex-end;
+  width: 33%;
   @media only screen and (max-width: 40em) {
     & {
         padding: 2rem;
@@ -32,8 +34,9 @@ export const ColOne = styled.div`
   }
 `;
 export const ColTwo = styled.div`
-  flex-basis: 67%;
-
+  padding: 1rem;
+  width: 38%;
+  margin-left: 3rem;
   @media only screen and (max-width: 40em) {
     & {
         padding: 2rem;
@@ -41,8 +44,7 @@ export const ColTwo = styled.div`
   }
 `;
 export const ColThree = styled.div`
-  flex-basis: 25%;
-
+width: 24%;
   @media only screen and (max-width: 40em) {
     & {
         display: none;
@@ -82,75 +84,7 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const CircleOne = styled.div`
-  background-color: #42f1f8;
-  height: 10rem;
-  width: 10rem;
-  border-radius: 100rem;
-  opacity: 0.9;
-  position: absolute;
-  top: 7%;
-  right: 0;
-  transform: scale(2.3);
-
-  @media only screen and (max-width: 40em) {
-    & {
-        display: none;
-    }
-  }
-
-  @media only screen and (max-width: 56em) {
-    & {
-      right: -10%;
-      transform: scale(1.8);
-    }
-  }
-`;
-
-export const CircleTwo = styled.div`
-  background-color: #320f51;
-  height: 10rem;
-  width: 10rem;
-  border-radius: 100rem;
-  opacity: 0.5;
-  position: absolute;
-  top: 55%;
-  right: 8%;
-  transform: translate(-5%, -55%) scale(1.2);
-
-  @media only screen and (max-width: 56em) {
-    & {
-      right: 0%;
-      transform: translate(-5%, -55%) scale(1.1);
-    }
-  }
-  @media only screen and (max-width: 40em) {
-    & {
-        display: none;
-    }
-  }
-`;
-
-export const CircleThree = styled.div`
-  background-color: #e91e7a;
-  height: 10rem;
-  width: 10rem;
-  border-radius: 100rem;
-  position: absolute;
-  z-index: -1;
-  right: -2%;
-  bottom: 5%;
-  transform: scale(1.7);
-
-  @media only screen and (max-width: 56em) {
-    & {
-      right: -10%;
-      transform: scale(1.4);
-    }
-  }
-  @media only screen and (max-width: 40em) {
-    & {
-        display: none;
-    }
-  }
-`;
+export const StyledImage = styled((props) => <Img {...props} />)`
+    position: absolute;
+    transform: translateX(50%) scale(1.5);
+`

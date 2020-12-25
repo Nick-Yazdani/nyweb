@@ -11,11 +11,11 @@ import {
   Form
 } from './Contact.elements';
 
-export default function Contact({ title, btnText }) {
+export default function Contact({ title, btnText, bgColor, titleColor }) {
   return (
-    <Container>
+    <Container bgColor={bgColor}>
       <Row>
-        <Title>{title}</Title>
+        <Title titleColor={titleColor}>{title}</Title>
       </Row>
       <Form>
       <Row>

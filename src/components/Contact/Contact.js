@@ -8,7 +8,11 @@ import {
   Button,
   Row,
   Col,
-  Form
+  Form,
+  BudgetContainer,
+  BudgetItemTitle,
+  BudgetItem,
+  BudgetItemSelection
 } from './Contact.elements';
 
 export default function Contact({ title, btnText }) {
@@ -30,7 +34,13 @@ export default function Contact({ title, btnText }) {
         </Col>
       </Row>
       <Row>
-          
+          <BudgetContainer>
+              <BudgetItemTitle>Expected Budget</BudgetItemTitle>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $800 - $2000</BudgetItem>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $3000 - $5000</BudgetItem>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $3000 - $10,000</BudgetItem>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $10,000+</BudgetItem>
+          </BudgetContainer>
       </Row>
       <Row>
         <Message placeholder="Message" />

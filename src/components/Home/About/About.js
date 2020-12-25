@@ -1,4 +1,6 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby'
+
 import {
   Container,
   ColOne,
@@ -7,19 +9,27 @@ import {
   Word,
   Title,
   Paragraph,
-  CircleOne,
-  CircleTwo,
-  CircleThree
+  StyledImage
 } from './About.elements';
 
-export default function About({ paragraphOne, paragraphTwo, paragraphThree }) {
+export default function About({ paragraphOne, paragraphTwo, paragraphThree, words }) {
+    const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "circles.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }`)
   return (
     <Container>
       <ColOne>
         <Title>
-            <Word>who</Word>
-            <Word>are</Word>
-            <Word>we?</Word>
+            {words.map(word => {
+                return <Word key={word.word}>{word.word}</Word>
+            })}
         </Title>
       </ColOne>
       <ColTwo>
@@ -34,9 +44,7 @@ export default function About({ paragraphOne, paragraphTwo, paragraphThree }) {
         </Paragraph>
       </ColTwo>
       <ColThree>
-        <CircleOne />
-        <CircleTwo />
-        <CircleThree />
+            <StyledImage fluid={data.file.childImageSharp.fluid} />
       </ColThree>
     </Container>
   );
