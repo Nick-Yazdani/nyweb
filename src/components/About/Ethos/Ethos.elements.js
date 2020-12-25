@@ -9,6 +9,12 @@ export const Title = styled.h2`
     font-size: 4rem;
     padding: 3rem;
     text-align: center;
+
+    @media only screen and (max-width: 56em) {
+    & {
+      font-size: 3rem;
+    }
+  }
 `
 
 export const Paragraph = styled.p`
@@ -19,4 +25,11 @@ export const Paragraph = styled.p`
     margin: 0 auto;
     padding-bottom: 5rem;
     margin-bottom: 3rem;
+
+    @media only screen and (max-width: 56em) {
+    & {
+      font-size: 1.3rem;
+      line-height: 3rem;
+    }
+  }
 ` 

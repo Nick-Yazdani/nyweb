@@ -30,8 +30,12 @@ export const ColOne = styled.div`
   @media only screen and (max-width: 40em) {
     & {
         padding: 2rem;
+        width: 100%;
+        justify-content: center;
     }
   }
+
+  
 `;
 export const ColTwo = styled.div`
   padding: 1rem;
@@ -40,6 +44,8 @@ export const ColTwo = styled.div`
   @media only screen and (max-width: 40em) {
     & {
         padding: 2rem;
+        width: 100%;
+        margin: 0;
     }
   }
 `;
@@ -64,6 +70,14 @@ export const Title = styled.h2`
       font-size: 3.5rem;
     }
   }
+
+  @media only screen and (max-width: 40em) {
+    & {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+  }
 `;
 export const Word = styled.span`
   &:not(:last-child) {
@@ -79,7 +93,7 @@ export const Paragraph = styled.p`
 
   @media only screen and (max-width: 56em) {
     & {
-      font-size: 0.7rem;
+      font-size: .9rem;
     }
   }
 `;
