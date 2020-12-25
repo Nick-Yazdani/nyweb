@@ -1,6 +1,43 @@
-import styled from 'styled-components';
-import React from 'react'
-import Img from 'gatsby-image'
+import styled, { keyframes } from 'styled-components';
+import React from 'react';
+import Img from 'gatsby-image';
+
+
+const fadeInSlideFromLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const fadeInSlideFromTop = keyframes`
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const fadeInScale = keyframes`
+  0% {
+    transform: scale(-1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.section`
   display: flex;
@@ -12,14 +49,14 @@ export const Container = styled.section`
 
   @media only screen and (max-width: 40em) {
     & {
-        justify-content: center;
+      justify-content: center;
     }
   }
 
   @media only screen and (max-width: 32.5em) {
     & {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
   }
 `;
@@ -29,13 +66,15 @@ export const ColOne = styled.div`
   width: 33%;
   @media only screen and (max-width: 40em) {
     & {
-        padding: 2rem;
-        width: 100%;
-        justify-content: center;
+      padding: 2rem;
+      width: 100%;
+      justify-content: center;
     }
   }
 
-  
+  &.animated {
+    animation: ${fadeInSlideFromLeft} 1s linear;
+  }
 `;
 export const ColTwo = styled.div`
   padding: 1rem;
@@ -43,18 +82,26 @@ export const ColTwo = styled.div`
   margin-left: 3rem;
   @media only screen and (max-width: 40em) {
     & {
-        padding: 2rem;
-        width: 100%;
-        margin: 0;
+      padding: 2rem;
+      width: 100%;
+      margin: 0;
     }
+  }
+
+  &.animated {
+    animation: ${fadeInSlideFromTop} 1s linear;
   }
 `;
 export const ColThree = styled.div`
-width: 24%;
+  width: 24%;
   @media only screen and (max-width: 40em) {
     & {
-        display: none;
+      display: none;
     }
+  }
+
+  &.animated {
+        animation: ${fadeInScale} 1s linear;
   }
 `;
 export const Title = styled.h2`
@@ -73,9 +120,9 @@ export const Title = styled.h2`
 
   @media only screen and (max-width: 40em) {
     & {
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
   }
 `;
@@ -93,12 +140,13 @@ export const Paragraph = styled.p`
 
   @media only screen and (max-width: 56em) {
     & {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
 `;
 
 export const StyledImage = styled((props) => <Img {...props} />)`
-    position: absolute;
-    transform: translateX(50%) scale(1.5);
-`
+  position: absolute;
+  transform: translateX(50%) scale(1.5);
+`;
+

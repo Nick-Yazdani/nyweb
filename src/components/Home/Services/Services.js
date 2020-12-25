@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, forwardRef } from 'react';
+import useScrollDetect from '../../../hooks/useScrollDetect';
 import {
   Container,
   Title,
@@ -19,7 +20,7 @@ export default function Services({
   paragraphTwo,
   paragraphThree,
 }) {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       DesktopOne: file(relativePath: { eq: "Computer.png" }) {
         childImageSharp {
@@ -65,47 +66,51 @@ export default function Services({
       }
     }
   `);
-    const sourcesOne = [
-        data.DesktopOne.childImageSharp.fixed,
-        {
-          ...data.MobileOne.childImageSharp.fixed,
-          media: `(max-width: 900px)`,
-        },
-      ]
-      const sourcesTwo = [
-        data.DesktopTwo.childImageSharp.fixed,
-        {
-          ...data.MobileTwo.childImageSharp.fixed,
-          media: `(max-width: 900px)`,
-        },
-      ]
-      const sourcesThree = [
-        data.DesktopThree.childImageSharp.fixed,
-        {
-          ...data.MobileThree.childImageSharp.fixed,
-          media: `(max-width: 900px)`,
-        },
-      ]
-            
+  const sourcesOne = [
+    data.DesktopOne.childImageSharp.fixed,
+    {
+      ...data.MobileOne.childImageSharp.fixed,
+      media: `(max-width: 900px)`,
+    },
+  ];
+  const sourcesTwo = [
+    data.DesktopTwo.childImageSharp.fixed,
+    {
+      ...data.MobileTwo.childImageSharp.fixed,
+      media: `(max-width: 900px)`,
+    },
+  ];
+  const sourcesThree = [
+    data.DesktopThree.childImageSharp.fixed,
+    {
+      ...data.MobileThree.childImageSharp.fixed,
+      media: `(max-width: 900px)`,
+    },
+  ];
+
+  const containerRef = useRef(null);
+
+  const scrolledPast = useScrollDetect(forwardRef(containerRef));
+
   return (
-    <Container>
+    <Container ref={containerRef}>
       <Row>
-        <Col>
+        <Col className={scrolledPast ? "animated" : ""}>
           <Title>{heading}</Title>
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className={scrolledPast ? "start" : ""}>
           <StyledImage fixed={sourcesOne} />
           <SubTitle>{subHeadingOne}</SubTitle>
           <Paragraph>{paragraphOne}</Paragraph>
         </Col>
-        <Col>
+        <Col className={scrolledPast ? "middle" : ""}>
           <StyledImage fixed={sourcesTwo} />
           <SubTitle>{subHeadingTwo}</SubTitle>
           <Paragraph>{paragraphTwo}</Paragraph>
         </Col>
-        <Col>
+        <Col className={scrolledPast ? "end" : ""}>
           <StyledImage fixed={sourcesThree} />
           <SubTitle>{subHeadingThree}</SubTitle>
           <Paragraph>{paragraphThree}</Paragraph>

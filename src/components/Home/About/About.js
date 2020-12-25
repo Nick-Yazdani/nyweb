@@ -1,5 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { useRef, forwardRef } from 'react';
+import useScrollDetect from '../../../hooks/useScrollDetect';
+import { useStaticQuery, graphql } from 'gatsby';
+
 
 import {
   Container,
@@ -9,11 +11,16 @@ import {
   Word,
   Title,
   Paragraph,
-  StyledImage
+  StyledImage,
 } from './About.elements';
 
-export default function About({ paragraphOne, paragraphTwo, paragraphThree, words }) {
-    const data = useStaticQuery(graphql`
+export default function About({
+  paragraphOne,
+  paragraphTwo,
+  paragraphThree,
+  words,
+}) {
+  const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "circles.png" }) {
         childImageSharp {
@@ -22,29 +29,29 @@ export default function About({ paragraphOne, paragraphTwo, paragraphThree, word
           }
         }
       }
-    }`)
+    }
+  `);
+
+  const containerRef = useRef(null);
+
+  const scrolledPast = useScrollDetect(forwardRef(containerRef));
+
   return (
-    <Container>
-      <ColOne>
+    <Container ref={containerRef}>
+      <ColOne className={scrolledPast ? "animated" : ""}>
         <Title>
-            {words.map(word => {
-                return <Word key={word.word}>{word.word}</Word>
-            })}
+          {words.map((word) => {
+            return <Word key={word.word}>{word.word}</Word>;
+          })}
         </Title>
       </ColOne>
-      <ColTwo>
-        <Paragraph>
-            {paragraphOne}
-        </Paragraph>
-        <Paragraph>
-            {paragraphTwo}
-        </Paragraph>
-        <Paragraph>
-            {paragraphThree}
-        </Paragraph>
+      <ColTwo className={scrolledPast ? "animated" : ""}>
+        <Paragraph>{paragraphOne}</Paragraph>
+        <Paragraph>{paragraphTwo}</Paragraph>
+        <Paragraph>{paragraphThree}</Paragraph>
       </ColTwo>
-      <ColThree>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+      <ColThree className={scrolledPast ? "animated" : ""}>
+        <StyledImage fluid={data.file.childImageSharp.fluid} />
       </ColThree>
     </Container>
   );

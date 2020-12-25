@@ -1,6 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
+
+const headingAnimation = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+
+  80% {
+    transform: translateX(30%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+const btnAnimation = keyframes`
+  0% {
+    transform: translateX(200%);
+  }
+
+  80% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`;
 
 export const Video = styled.video`
   height: 100vh;
@@ -32,6 +60,7 @@ export const Heading = styled.h1`
   margin-bottom: 2rem;
   text-align: left;
   line-height: 2.7rem;
+  animation: ${headingAnimation} 2s ease-in-out;
 
   @media only screen and (max-width: 25em) {
     & {
@@ -51,6 +80,9 @@ export const Button = styled((props) => <Link {...props} />)`
   position: relative;
   border-radius: 3px;
   transition: all 0.3s;
+
+  animation: ${btnAnimation} 2s ease-in-out;
+
 
   &::after {
     content: '';
@@ -76,3 +108,4 @@ export const Button = styled((props) => <Link {...props} />)`
 export const Container = styled.section`
   position: relative;
 `;
+
