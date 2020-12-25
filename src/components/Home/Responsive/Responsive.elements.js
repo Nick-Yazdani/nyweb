@@ -4,18 +4,13 @@ import Img from 'gatsby-image';
 
 const SmallBig = keyframes`
   0% {
-    transform: scale(1);
+    transform: scale(.5);
+    opacity: 0;
   }
 
-  25% {
-      transform: scale(.25);
-  }
-
-  50% {
-      transform: scale(.5);
-  }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 `;
 

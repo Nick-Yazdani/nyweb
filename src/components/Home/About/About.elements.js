@@ -73,7 +73,7 @@ export const ColOne = styled.div`
   }
 
   &.animated {
-    animation: ${fadeInSlideFromLeft} 1s linear;
+    animation: ${fadeInSlideFromLeft} 2s linear;
   }
 `;
 export const ColTwo = styled.div`
@@ -89,7 +89,7 @@ export const ColTwo = styled.div`
   }
 
   &.animated {
-    animation: ${fadeInSlideFromTop} 1s linear;
+    animation: ${fadeInSlideFromTop} 2s linear;
   }
 `;
 export const ColThree = styled.div`
@@ -101,7 +101,7 @@ export const ColThree = styled.div`
   }
 
   &.animated {
-        animation: ${fadeInScale} 1s linear;
+        animation: ${fadeInScale} 2s linear;
   }
 `;
 export const Title = styled.h2`
