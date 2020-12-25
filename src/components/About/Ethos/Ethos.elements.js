@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
     color: #666666;
+    padding: 3rem;
 `
 
 export const Title = styled.h2`
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 3rem;
     padding: 3rem;
     text-align: center;
 
@@ -18,8 +19,8 @@ export const Title = styled.h2`
 `
 
 export const Paragraph = styled.p`
-    font-size: 2rem;
-    line-height: 4rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
     text-align: center;
     width: 75%;
     margin: 0 auto;

@@ -1,8 +1,15 @@
 import React from 'react';
-import { About, Layout, Services, Contact, More, ServicesCover } from '../components/index';
+import { Helmet } from 'react-helmet';
+import {
+  About,
+  Layout,
+  Services,
+  Contact,
+  More,
+  ServicesCover,
+} from '../components/index';
 
 import animation from '../videos/animation.mp4';
-
 
 const aboutWords = [
   {
@@ -17,22 +24,38 @@ const aboutWords = [
 ];
 
 const paragraphs = [
-    {
-        paragraph: "We do all we can to provide efficient results for our clients. We start by building comprehensive briefs that encapsulate your vision."
-    },
-    {
-        paragraph: "We take the time to cultivate a working relationship built on understanding and trust, where rigorous testing and honest feedback is essential to delivering the right product, first time, every time. Let's get it crystal clear from step one!"
-    },
-    {
-        paragraph: "From the initial drafting process, all the way through to development and launch. When we hit the go button, rest assured that we are supremely confident in delivering exactly what you envisioned."
-    }
-]
+  {
+    paragraph:
+      'We do all we can to provide efficient results for our clients. We start by building comprehensive briefs that encapsulate your vision.',
+  },
+  {
+    paragraph:
+      "We take the time to cultivate a working relationship built on understanding and trust, where rigorous testing and honest feedback is essential to delivering the right product, first time, every time. Let's get it crystal clear from step one!",
+  },
+  {
+    paragraph:
+      'From the initial drafting process, all the way through to development and launch. When we hit the go button, rest assured that we are supremely confident in delivering exactly what you envisioned.',
+  },
+];
 
 export default function ServicesPage() {
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Specialising in development and design - NY Web Development
+        </title>
+
+        <meta
+          name="description"
+          content="We provide services that allow your business to flourish. With a slick, modern and lightning fast website or store, you will blitz the competition."
+        />
+      </Helmet>
       <main>
-        <ServicesCover heading={`we have what it takes`} btnText={`get in touch`}/>
+        <ServicesCover
+          heading={`we have what it takes`}
+          btnText={`get in touch`}
+        />
         <About
           words={aboutWords}
           paragraphOne={`Do you want a new and engaging website or e-commerce store? A digital masterpiece that feels sleek, modern and robust? An online platform that loads as fast as lightning and immediately sets you apart from your competitors?`}
@@ -47,7 +70,11 @@ export default function ServicesPage() {
           paragraphTwo={`Our design team can provide unique and stunning designs, and templates.`}
           paragraphThree={`We can build you a fresh and engaging app that sets you apart from the competitors.`}
         />
-        <More title={`it's more than just code`} paragraphs={paragraphs} video={animation} />
+        <More
+          title={`it's more than just code`}
+          paragraphs={paragraphs}
+          video={animation}
+        />
         <Contact
           title={`Contact us!`}
           btnText={`submit`}

@@ -36,9 +36,9 @@ export default function Contact({ title, btnText }) {
       <Row>
           <BudgetContainer>
               <BudgetItemTitle>Expected Budget</BudgetItemTitle>
-              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $800 - $2000</BudgetItem>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $800 - $3000</BudgetItem>
               <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $3000 - $5000</BudgetItem>
-              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $3000 - $10,000</BudgetItem>
+              <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $5000 - $10,000</BudgetItem>
               <BudgetItem><BudgetItemSelection type="radio" name="budget" /> $10,000+</BudgetItem>
           </BudgetContainer>
       </Row>

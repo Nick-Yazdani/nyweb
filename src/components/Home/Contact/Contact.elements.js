@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section.attrs((props) => ({
   bgColor: props.bgColor || `#fff`,
 }))`
-  padding: 2rem 5rem;
+  padding: 4rem 5rem;
   background-color: ${(props) => props.bgColor};
 
   @media only screen and (max-width: 26em) {
