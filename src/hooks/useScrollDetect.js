@@ -8,14 +8,14 @@ const useScrollDetect = ref => {
     const elemTop = rect.top;
     const elemBottom = rect.bottom;
 
-    const isVisible = elemTop < window.innerHeight / 2 && elemBottom >= 0;
+    const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
 
     setScrolledPast(isVisible);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      isScrolledIntoView(ref.render.current);
+      isScrolledIntoView(ref.current);
     });
   }, [ref]);
 

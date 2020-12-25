@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef } from 'react';
+import React, { useRef } from 'react';
 import useScrollDetect from '../../../hooks/useScrollDetect';
 import {
   Container,
@@ -90,7 +90,7 @@ export default function Services({
 
   const containerRef = useRef(null);
 
-  const scrolledPast = useScrollDetect(forwardRef(containerRef));
+  const scrolledPast = useScrollDetect(containerRef);
 
   return (
     <Container ref={containerRef}>

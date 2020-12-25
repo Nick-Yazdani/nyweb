@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import useScrollDetect from '../../../hooks/useScrollDetect';
 import {
   Container,
   Title,
@@ -58,8 +59,13 @@ const sourcesOne = [
       media: `(max-width: 900px)`,
     },
   ]
+
+  const containerRef = useRef(null);
+
+  const scrolledPast = useScrollDetect(containerRef);
+  
   return (
-    <Container>
+    <Container ref={containerRef} className={scrolledPast ? "animated" : ""}>
       <Row>
         <Title>{heading}</Title>
       </Row>
