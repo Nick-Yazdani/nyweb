@@ -1,12 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: "nickyazdani",
+    title: "NY Web Development",
+    siteUrl: `https://main--cranky-bartik-70ba1d.netlify.app`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
