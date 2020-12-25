@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useScrollDetect = ref => {
+const useScrollDetect = (ref) => {
   const [scrolledPast, setScrolledPast] = useState(false);
 
   const isScrolledIntoView = (el) => {
@@ -15,7 +15,9 @@ const useScrollDetect = ref => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      isScrolledIntoView(ref.current);
+      if (ref.current) {
+        isScrolledIntoView(ref.current);
+      }
     });
   }, [ref]);
 
