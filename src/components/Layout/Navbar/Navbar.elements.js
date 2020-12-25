@@ -29,6 +29,12 @@ export const LogoContainer = styled.div`
       padding: 0;
     }
   }
+
+  @media only screen and (max-width: 25em) {
+    & {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 export const Navigation = styled.nav`
