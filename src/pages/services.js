@@ -1,5 +1,5 @@
 import React from 'react';
-import { About, Layout, Services, Contact, More } from '../components/index';
+import { About, Layout, Services, Contact, More, ServicesCover } from '../components/index';
 
 import animation from '../videos/animation.mp4';
 
@@ -32,6 +32,7 @@ export default function ServicesPage() {
   return (
     <Layout>
       <main>
+        <ServicesCover heading={`we have what it takes`} btnText={`get in touch`}/>
         <About
           words={aboutWords}
           paragraphOne={`Do you want a new and engaging website or e-commerce store? A digital masterpiece that feels sleek, modern and robust? An online platform that loads as fast as lightning and immediately sets you apart from your competitors?`}

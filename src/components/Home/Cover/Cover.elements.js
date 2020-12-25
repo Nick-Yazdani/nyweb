@@ -31,6 +31,7 @@ export const Heading = styled.h1`
   font-size: 1.7rem;
   margin-bottom: 2rem;
   text-align: left;
+  line-height: 2.7rem;
 
   @media only screen and (max-width: 25em) {
     & {

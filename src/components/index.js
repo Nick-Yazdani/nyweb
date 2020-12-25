@@ -9,6 +9,10 @@ export { default as ContactTwo } from './Contact/Contact'
 export { default as Call } from './About/Call/Call'
 export { default as Ethos } from './About/Ethos/Ethos'
 export { default as More } from './Services/More/More'
+export { default as ServicesCover } from './Services/Cover/ServicesCover'
+export { default as Soon } from './Portfolio/Soon/Soon'
+
+
 
 
 
